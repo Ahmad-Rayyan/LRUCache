@@ -25,7 +25,7 @@ class LruCache {
       const alreadyCashed = this.cacheMap.has(key);
       if (alreadyCashed) {
         console.log(
-          `Map is full, but Item (${key}) already cashed, delete then re-insert`
+          `Map is full, but key (${key}) already cashed whith different value, delete then re-insert`
         );
         this.cacheMap.delete(key);
         this.cacheMap.set(key, value);
