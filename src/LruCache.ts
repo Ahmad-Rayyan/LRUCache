@@ -30,9 +30,7 @@ class LruCache {
       this.cacheMap.delete(keyToDelete);
     }
 
-    console.log(
-      `Map is not full size = (${this.cacheMap.size}), add item (${key})`
-    );
+    console.log(`Map size = (${this.cacheMap.size}), add item (${key})`);
     this.cacheMap.set(key, value);
     console.log(`Map size = (${this.cacheMap.size})`);
   }
