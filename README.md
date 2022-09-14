@@ -4,13 +4,11 @@
 
 Simply clone down this repository, install dependencies
 
-# install dependencies
-npm install
-```
-
-
 ### Development Scripts
 
+```
+# install dependencies
+npm install
 
 # run application in development mode
 npm run start:dev
