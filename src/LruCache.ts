@@ -22,12 +22,20 @@ class LruCache {
 
   public put(key: string, value: string) {
     if (this.cacheMap.size >= this.size) {
-      // least-recently used cache eviction strategy
-      const keyToDelete = this.cacheMap.keys().next().value;
-      console.log(
-        `Map is full, delete least recently used item (${keyToDelete})`
-      );
-      this.cacheMap.delete(keyToDelete);
+      const alreadyCashed = this.cacheMap.has(key);
+      if (alreadyCashed) {
+        console.log(
+          `Map is full, but Item (${key}) already cashed, delete then re-insert`
+        );
+        this.cacheMap.delete(key);
+        this.cacheMap.set(key, value);
+      } else {
+        const keyToDelete = this.cacheMap.keys().next().value;
+        console.log(
+          `Map is full, delete least recently used item (${keyToDelete})`
+        );
+        this.cacheMap.delete(keyToDelete);
+      }
     }
 
     console.log(`Map size = (${this.cacheMap.size}), add item (${key})`);
