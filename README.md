@@ -11,6 +11,7 @@ npm install
 
 ### Development Scripts
 
-```bash
+
 # run application in development mode
 npm run start:dev
+```
